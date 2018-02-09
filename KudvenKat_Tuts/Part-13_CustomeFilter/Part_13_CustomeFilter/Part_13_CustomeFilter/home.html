@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home Page</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/ScriptFile.js"></script>
+    <script src="Scripts/filter.js"></script>
+</head>
+<body ng-app="myModule">
+                
+<!-- EVENTS IN ANGULAR -->   
+
+<h1>HANDLING EVENTS WITH ANGULAR : {{ 10 + 10 }}</h1>
+<div ng-controller="myController">
+   
+    
+<!-- *********************   SORT ************************************-->
+    Search: <input type="text" placeholder="Search..." ng-model="searchText.name" />
+    <br/>
+    <br/>
+        Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit"/>
+    <br/><br />
+    
+    <br/>
+    Sort By: <select ng-model="sortColumn">
+        <option value="name">name</option>
+        <option value="-salary">Salary</option>
+        <option value="dateOfBirth">Date Of Birth</option>
+    </select>
+    <br/><br />
+    
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Date Of Birth
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Salary (Currency)
+                </th>
+                <th>
+                    Salary (number)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="employee in employees ">
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.dateOfBirth}}</td>
+                <td>{{ employee.gender }}</td>
+                <td>{{ employee.salary | currency: 'R' }}</td> <!-- formatting to 2 decimal places-->
+                <td>{{ employee.salary }}</td>
+                <!--<td>
+                    <input type="button" value="Likes" ng-click="incrementLikes(technology)"/>
+                    <input type="button" value="DisLikes" ng-click="incrementDislikes(technology)"/>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+    
+    <br/><br/><br/>
+
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Date Of Birth
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Salary (Currency)
+            </th>
+            <th>
+                Salary (number)
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="employee in employees ">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.dateOfBirth}}</td>
+            <td>{{ employee.gender | gender}}</td>
+            <td>{{ employee.salary  | currency: 'R '}}</td> <!-- formatting to 2 decimal places-->
+            <td>{{ employee.salary }}</td>
+            <!--<td>
+                <input type="button" value="Likes" ng-click="incrementLikes(technology)"/>
+                <input type="button" value="DisLikes" ng-click="incrementDislikes(technology)"/>
+            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/ScriptFile.js"></script>
+</body>
+
+</html>

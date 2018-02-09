@@ -58,10 +58,10 @@
 
         <tbody>
         <tr ng-repeat="employee in employees | filter:searchText">
-            <td>{{ employee.name  | uppercase}}</td>
-            <td>{{ employee.dateOfBirth | date:"dd/mm/yyyy"}}</td>
+            <td>{{ employee.name  | uppercase }}</td>
+            <td>{{ employee.dateOfBirth | date:"dd/mm/yyyy" }}</td>
             <td>{{ employee.gender }}</td>
-            <td>{{ employee.salary | number: 2}}</td> <!-- formatting to 2 decimal places-->
+            <td>{{ employee.salary | number: 2 }}</td> <!-- formatting to 2 decimal places-->
             <td>{{ employee.salary | currency : "R " }}</td>
             <!--<td>
                 <input type="button" value="Likes" ng-click="incrementLikes(technology)"/>
@@ -70,9 +70,6 @@
         </tr>
         </tbody>
     </table>
-    
-    
-
 </div>
     <script src="Scripts/angular.min.js"></script>               
     <script src="Scripts/Scripts.js"></script>
